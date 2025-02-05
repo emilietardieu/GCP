@@ -5,7 +5,7 @@ import cv2
 from tqdm import tqdm
 import csv
 
-def decouper_images_avec_keypoints(data, output_dir, csv_path, crop_size=1024, prob_empty=0.2, resize_factor_avant=2, resize_factor_apres=2, overlap=0.3):
+def decouper_images_avec_keypoints(data, output_dir, csv_path, crop_size=1024, prob_empty=0, resize_factor_avant=2, resize_factor_apres=4, overlap=0.3):
     """
     Découpe les images en sous-images avec un chevauchement, réduit leur résolution et gère les keypoints.
     """
@@ -82,14 +82,37 @@ def decouper_images_avec_keypoints(data, output_dir, csv_path, crop_size=1024, p
             print(f"{crop_count} sous-images générées pour {image_path}")
 
 
+# Toutes les données
+
+# data = pd.read_csv("/home/hiphen/Documents/GCP/data/my_data/filtered_data/data_filtered_jpg_sbb.csv", sep = ",")  
+
+# output_dir = "/home/hiphen/Documents/GCP/data/my_data/sbbox/images_cropped"
+# csv_output = "/home/hiphen/Documents/GCP/data/my_data/sbbox/sous_images_metadata.csv"
+# decouper_images_avec_keypoints(data, output_dir, csv_output)
 
 
-# Charger le CSV contenant les keypoints
-data = pd.read_csv("/home/hiphen/Documents/GCP/data/my_data/Resize_data/resolution/resolution.csv", sep = ";")  
+# Echantillon (advanta )
 
-# Ajuster le chemin des images
+data = pd.read_csv("/home/hiphen/Documents/GCP/data/my_data/filtered_data/advanta_csv.csv", sep = ";")  
 
-# Appeler la fonction
-output_dir = "/home/hiphen/Documents/GCP/data/my_data/Resize_data/resolution/images_test_crop"
-csv_output = "/home/hiphen/Documents/GCP/data/my_data/Resize_data/resolution/sous_images_metadata.csv"
+output_dir = "/home/hiphen/Documents/GCP/data/my_data/Resize_data/advanta/sans_0/images_cropped_sans0_256x256"
+csv_output = "/home/hiphen/Documents/GCP/data/my_data/Resize_data/advanta/sans_0/sous_images_metadata.csv"
 decouper_images_avec_keypoints(data, output_dir, csv_output)
+
+# 10 images
+
+# data = pd.read_csv("/home/hiphen/Documents/GCP/data/my_data/filtered_data/10_echantillons.csv", sep = ";")  
+
+# output_dir = "/home/hiphen/Documents/GCP/data/my_data/Resize_data/10_echantillons/images_cropped"
+# csv_output = "/home/hiphen/Documents/GCP/data/my_data/Resize_data/10_echantillons/sous_images_metadata.csv"
+# decouper_images_avec_keypoints(data, output_dir, csv_output)
+
+
+# 80 images
+
+# data = pd.read_csv("/home/hiphen/Documents/GCP/data/my_data/filtered_data/echantillon_jpg.csv", sep = ";")  
+
+# output_dir = "/home/hiphen/Documents/GCP/data/my_data/Resize_data/10_echantillons/images_a_tester2/images_cropped"
+# csv_output = "/home/hiphen/Documents/GCP/data/my_data/Resize_data/10_echantillons/images_a_tester2/sous_images_metadata.csv"
+# decouper_images_avec_keypoints(data, output_dir, csv_output)
+

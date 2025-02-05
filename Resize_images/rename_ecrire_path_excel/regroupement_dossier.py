@@ -6,11 +6,13 @@ from supprimer_fichier_inexistant import suppr_path
 
 
 # Chargement du fichier CSV 
-fichier_csv = Path(r"//home/hiphen/Documents/GCP/data/my_data/filtered_data/data_filtered_jpg_sbb.csv")
+fichier_csv = Path(r"/home/hiphen/Documents/GCP/data/my_data/filtered_data/advanta_csv.csv")
+
 colonne_chemins = 'path'
 
 # Lire les chemins depuis le fichier CSV
-df = pd.read_csv(fichier_csv, sep=",")
+df = pd.read_csv(fichier_csv, sep=";")
+print(df.columns)
 chemins_images = df[colonne_chemins].dropna()
 
 # Initialiser une nouvelle colonne pour les nouveaux chemins
@@ -22,7 +24,7 @@ dossier_destination = set(Path(chemin).parent for chemin in chemins_images)
 chemin_inexistant = set()
 
 # Dossier cible où regrouper les images
-dossier_cible = Path(r"/home/hiphen/Documents/GCP/data/my_data/sbbox/images_originales")
+dossier_cible = Path(r"/home/hiphen/Documents/GCP/data/my_data/Resize_data/advanta/images_originales")
 
 # Parcourir les images et mettre à jour les chemins
 tqdm_desc = "\nParcours des dossiers"
@@ -43,4 +45,4 @@ chemin_inexistant = sorted(chemin_inexistant)
 suppr_path(chemin_inexistant, fichier_csv)
 
 # Sauvegarder les mises à jour dans le fichier CSV
-df.to_csv(fichier_csv, sep=",", index=False)
+df.to_csv(fichier_csv, sep=";", index=False)

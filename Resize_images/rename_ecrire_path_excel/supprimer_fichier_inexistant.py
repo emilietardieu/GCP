@@ -7,7 +7,7 @@ def suppr_path(chemin_inexistant, fichier_csv):
     colonne_chemins = "path"
 
     # Charger le fichier CSV
-    df = pd.read_csv(fichier_csv, sep=",")
+    df = pd.read_csv(fichier_csv, sep=";")
 # Traiter les chemins inexistants pour correspondre au format dans le CSV
     chemins_a_supprimer = []
     print("chemins inex",chemin_inexistant)

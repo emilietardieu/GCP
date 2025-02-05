@@ -4,8 +4,22 @@ from pathlib import Path
 from tqdm import tqdm
 
 # Chemin du fichier d'entrée et du fichier de sortie
-csv_path = Path(r"/home/hiphen/Documents/GCP/data/my_data/Resize_data/sous_images_metadata.csv")
-output_file = Path(r"/home/hiphen/Documents/GCP/data/my_data/Resize_data/cropped_images/gt.csv")
+
+#  Toutes les images (14 500)
+# csv_path = Path(r"/home/hiphen/Documents/GCP/data/my_data/sbbox/sous_images_metadata.csv")
+# output_file = Path(r"/home/hiphen/Documents/GCP/data/my_data/sbbox/images_cropped/gt.csv")
+
+#  Test avec les images advanta (1500)
+csv_path = Path(r"/home/hiphen/Documents/GCP/data/my_data/Resize_data/advanta/sans_0/images_256x256/sous_images_metadata.csv")
+output_file = Path(r"/home/hiphen/Documents/GCP/data/my_data/Resize_data/advanta/sans_0/images_256x256/images_cropped_sans0_256x256/gt.csv")
+
+#  Test avec 10 images
+# csv_path = Path(r"/home/hiphen/Documents/GCP/data/my_data/Resize_data/10_echantillons/sous_images_metadata.csv")
+# output_file = Path(r"/home/hiphen/Documents/GCP/data/my_data/Resize_data/10_echantillons/images_cropped/gt.csv")
+
+# #  Test avec 80 images
+# csv_path = Path(r"/home/hiphen/Documents/GCP/data/my_data/Resize_data/10_echantillons/images_a_tester2/sous_images_metadata.csv")
+# output_file = Path(r"/home/hiphen/Documents/GCP/data/my_data/Resize_data/10_echantillons/images_a_tester2/images_cropped/gt.csv")
 
 # Charger les données CSV
 data = pd.read_csv(csv_path, sep=",")
@@ -31,7 +45,7 @@ def create_gt_csv(data_subset, output_csv_path):
         csv_data.append({
             "filename": crop_filenames,  # Un seul crop à la fois
             "count": count,
-            "locations": locations # Liste de tuples formatée avec des guillemets
+            "locations":  json.dumps(locations)
         })
 
     # Créer le fichier CSV final
