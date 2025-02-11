@@ -7,7 +7,7 @@ from supprimer_fichier_inexistant import suppr_path
 
 
 # Chargement du fichier CSV 
-fichier_csv = Path(r"/home/hiphen/Documents/GCP/data/my_data/advanta_csv.csv")
+fichier_csv = Path(r"/home/hiphen/Documents/GCP/data/my_data/filtered_data/advanta_bayer.csv")
 colonne_chemins = 'path'
 
 # Lire les chemins depuis le fichier CSV
@@ -20,7 +20,7 @@ dossier_destination = set(Path(chemin).parent for chemin in chemins_images)
 chemin_inexistant = set()
 
 # Dossier cible où regrouper les dossiers contenant des images
-dossier_cible = Path(r"/home/hiphen/Documents/GCP/data/my_data/sbbox")
+dossier_cible = Path(r"/home/hiphen/Documents/GCP/data/my_data/imgs_advanta_bayer")
 
 # Parcourir les images 
 for chemin_image in tqdm(chemins_images, desc="\nParcours des dossiers"):

@@ -30,7 +30,7 @@ def regrouper_dossiers_images(chemin_image , dossier_cible, fichier_csv):
 
         # Copier avec barre de progression
         print(f"Copie de : {chemin_image}")
-        #shutil.copy2(chemin_image, chemin_destination)
+        shutil.copy2(chemin_image, chemin_destination)
         print(f"Image copiée sous : {chemin_destination}")
 
 

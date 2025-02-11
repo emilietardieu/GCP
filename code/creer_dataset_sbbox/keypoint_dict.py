@@ -82,37 +82,3 @@ def decouper_images_avec_keypoints(fichier_csv, output_dir, csv_path, crop_size=
                         ])
                     crop_count += 1
             print(f"{crop_count} sous-images générées pour {image_path}")
-
-
-# Toutes les données
-
-# data = pd.read_csv("/home/hiphen/Documents/GCP/data/my_data/filtered_data/data_filtered_jpg_sbb.csv", sep = ",")  
-
-# output_dir = "/home/hiphen/Documents/GCP/data/my_data/sbbox/images_cropped"
-# csv_output = "/home/hiphen/Documents/GCP/data/my_data/sbbox/sous_images_metadata.csv"
-# decouper_images_avec_keypoints(data, output_dir, csv_output)
-
-
-# Echantillon (advanta )
-fichier_csv = "/home/hiphen/Documents/GCP/data/my_data/filtered_data/advanta_bayer.csv"
-output_dir = "/home/hiphen/Documents/GCP/data/my_data/Resize_data/advanta_bayer/images"
-csv_output = "/home/hiphen/Documents/GCP/data/my_data/Resize_data/advanta_bayer/sous_images_metadata.csv"
-decouper_images_avec_keypoints(fichier_csv, output_dir, csv_output)
-
-# 10 images
-
-# data = pd.read_csv("/home/hiphen/Documents/GCP/data/my_data/filtered_data/10_echantillons.csv", sep = ";")  
-
-# output_dir = "/home/hiphen/Documents/GCP/data/my_data/Resize_data/10_echantillons/images_cropped"
-# csv_output = "/home/hiphen/Documents/GCP/data/my_data/Resize_data/10_echantillons/sous_images_metadata.csv"
-# decouper_images_avec_keypoints(data, output_dir, csv_output)
-
-
-# 80 images
-
-# data = pd.read_csv("/home/hiphen/Documents/GCP/data/my_data/filtered_data/echantillon_jpg.csv", sep = ";")  
-
-# output_dir = "/home/hiphen/Documents/GCP/data/my_data/Resize_data/10_echantillons/images_a_tester2/images_cropped"
-# csv_output = "/home/hiphen/Documents/GCP/data/my_data/Resize_data/10_echantillons/images_a_tester2/sous_images_metadata.csv"
-# decouper_images_avec_keypoints(data, output_dir, csv_output)
-

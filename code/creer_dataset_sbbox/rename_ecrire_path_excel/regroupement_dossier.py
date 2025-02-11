@@ -4,10 +4,8 @@ from tqdm import tqdm
 from regrouper_images_fonction import regrouper_dossiers_images
 from supprimer_fichier_inexistant import suppr_path
 
-fichier_csv = Path(r"/home/hiphen/Documents/GCP/data/my_data/filtered_data/advanta_bayer.csv")
-dossier_cible = Path(r"/home/hiphen/Documents/GCP/data/my_data/img_advanta_bayer ")
-
 def regroupement_dosssier(fichier_csv, dossier_cible) :
+
 
     colonne_chemins = 'path'
 
